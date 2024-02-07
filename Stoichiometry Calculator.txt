@@ -1,0 +1,20 @@
+def stoichiometry(reactants, products):
+    # Assume balanced chemical equation with integer coefficients
+    reactant_coeffs = [1, 2, 3]  # Example coefficients for reactants
+    product_coeffs = [1, 1, 2]   # Example coefficients for products
+    
+    # Calculate moles of limiting reactant (assuming all reactants are limiting)
+    moles = [reactant / coeff for reactant, coeff in zip(reactants, reactant_coeffs)]
+    
+    # Determine limiting reactant
+    limiting_reactant = min(moles)
+    
+    # Calculate moles of each product
+    product_moles = [coeff * limiting_reactant for coeff in product_coeffs]
+    
+    return product_moles
+
+# Example usage:
+reactants = [2, 3, 4]  # Example moles of reactants
+products = stoichiometry(reactants, [])
+print("Moles of products:", products)
